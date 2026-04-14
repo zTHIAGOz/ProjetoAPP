@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+<head>
+	<style>
+		body{
+
+			font-family: Arial, sans-serif;
+			background-color: gray;
+		}
+		.container{
+			width: 400px;
+			margin: 50px auto;
+			background: white;
+			padding: 20px;
+			border-radius: 10px;
+
+		}
+
+		h1 {
+			text-align: center; /*alinha o texto no centro */
+
+		}
+
+		input {
+			width: 70%;
+			padding: 8px;
+		}
+
+		button{
+			padding: 8px;
+			margin-left: 5px;
+			cursor: pointer;
+		}
+
+		ul{
+			list-style: none;
+			padding: 0;
+		}
+
+		li{
+			background: #eee;
+			margin-top: 5px;
+			padding: 10px;
+			border-radius: 5px;
+		}
+
+		.concluida{
+			text-decoration: line-through;
+			color: gray;
+		}
+
+	</style>
+	<meta charset = "UTF-8">
+	<title>To Do List</title>
+	<style>
+		.concluida{
+			text-decoration : line-through;
+			color: gray;
+		}
+	</style>
+</head>
+
+<body>
+	<div class = "container"> /* cria uma caixa que vai envoler tudo, usada pra centralizar e estilizar */
+
+	<h1> Minha Lista de Tarefas </h1> 
+	
+	<input type = "text" id= "inputTarefa" placeholder = "Digite uma tarefa"> 
+	/* coloca a caixa de texto pra escrever a tarefa com a mensagem em cinza dentro */
+	<button onclick = "adicionarTarefa()"> Adicionar </button>
+	/*cria o botao que chama a função js*/
+	
+	<h2>Pendentes</h2>
+	<ul id = "listaPendentes"></ul>
+
+	<h2>Concluída</h2>
+	<ul id = "listaConcluidas"></ul>
+
+	<ul id = "listaTarefas"></ul>
+		</div>
+	
+	<script src = "script.js"></script>
+	
+	</body>
+
+	
+</html>
