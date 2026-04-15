@@ -1,7 +1,10 @@
 console.log("JS carregado");
 
-let tarefas = [];
+let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
 
+function salvarArquivo(){
+	localStorage.setItem("tarefas", JSON.stringify(tarefas));
+}
 
 function adicionarTarefa(){
 	const input = document.getElementById("inputTarefa");
@@ -17,7 +20,8 @@ function adicionarTarefa(){
 	
 	tarefas.push(tarefa);
 	input.value = "";
-	
+
+	salvarArquivo();
 	renderizar();
 }
 
@@ -56,10 +60,14 @@ function concluir (id){
 	if (tarefa){
 		tarefa.concluida = true;
 	}
+	salvarArquivo();
 	renderizar();
 }
 
 function remover (id){
 	tarefas = tarefas.filter(t => t.id !== id);
+	salvarArquivo();
 	renderizar();
 }
+
+renderizar();
